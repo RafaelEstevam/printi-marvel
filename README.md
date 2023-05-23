@@ -7,7 +7,8 @@
 - Babel
 - Styled components
 - Typescript
-X ESLint
-X Axios
-X Testes unitários
-X Testes end-to-end
+- Netlify
+- X ESLint
+- X Axios
+- X Testes unitários
+- X Testes end-to-end
