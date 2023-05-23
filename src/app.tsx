@@ -1,6 +1,13 @@
+import Routes from "./routes";
+import GlobalStyle from "./styles/global";
+
 function App() {
   return (
-    <div>{'react setup from scratch without cra testing ts 123 123'}</div>
+    <>
+      <GlobalStyle />
+      <Routes />
+    </>
+    
   );
 }
 export default App;
