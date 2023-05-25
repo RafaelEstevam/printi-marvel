@@ -1,3 +1,4 @@
+import { API } from "../../../services/api.service";
 import { FormDataProps } from "../hooks/useFormData.hook";
 
 export const submitAccessForm = (e: any) => {
@@ -9,4 +10,5 @@ export const submitAccessForm = (e: any) => {
 
 export const submitAccess = (body: FormDataProps) => {
     console.log(body);
+    //TODO redirect to list and save keys on localstorage and redux
 }
