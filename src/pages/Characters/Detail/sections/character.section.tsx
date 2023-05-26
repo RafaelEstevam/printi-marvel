@@ -2,7 +2,6 @@ import Button from "../../../../components/Button/button.component";
 import Section from "../../../../components/Section/section.component";
 import Text from "../../../../components/Text/text.component";
 import useCharacterData from "../hooks/useCharacterData.hook";
-import logo from "../../../../assets/imgs/logo_1.png";
 
 const CharacterSection = () => {
   const { character } = useCharacterData();
@@ -26,7 +25,7 @@ const CharacterSection = () => {
           }}
         >
           <img
-            src={`${character?.thumbnail.path}.${character?.thumbnail.extension}`}
+            src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
             height="300px"
           />
         </div>

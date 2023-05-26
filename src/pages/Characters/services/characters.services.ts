@@ -22,10 +22,10 @@ export const getCharacters = async () => {
   }
 };
 
-export const getCharacterById = async (characterId: number = 1010354) => {
+export const getCharacterById = async (id: number = 1010354) => {
   try {
-    const response: any = await API.get(`/v1/public/characters/${characterId}`);
-    return response.data.data;
+    const response: any = await API.get(`/v1/public/characters/${id}`);
+    return response.data.data.results[0];
   } catch {
     console.log("erro");
   }

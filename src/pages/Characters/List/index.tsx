@@ -6,6 +6,7 @@ import Grid from "../../../components/Grid/grid.component";
 import GridItem from "../../../components/Grid/grid.item.component";
 import Section from "../../../components/Section/section.component";
 import Text from "../../../components/Text/text.component";
+import { useAppDispatch } from "../../../hooks";
 import useCharactersList from "./hooks/useCharactersList.hook";
 
 const columns: ColumnsProps[] = [
@@ -16,7 +17,7 @@ const columns: ColumnsProps[] = [
 ];
 
 const CharactersList = () => {
-  const { characters } = useCharactersList();
+  const { characters, handleDispatch } = useCharactersList();
 
   return (
     <>
@@ -27,7 +28,7 @@ const CharactersList = () => {
             <Card>
               <Datatable
                 list={characters}
-                {...{ columns, link: "/characters/" }}
+                {...{ columns, link: "/characters/", handleDispatch }}
               />
             </Card>
           </GridItem>

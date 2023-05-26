@@ -8,7 +8,7 @@ export interface TableProps {
   list?: any;
   row?: any;
   columns: ColumnsProps[];
-  handleDispatch?: (props: any) => {};
+  handleDispatch?: (props: any) => any;
 }
 
 const TableColumn = ({ columns, row }: TableProps) => {

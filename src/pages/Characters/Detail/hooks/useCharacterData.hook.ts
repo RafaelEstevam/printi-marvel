@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
+import { useAppSelector } from "../../../../hooks";
 import { getCharacterById } from "../../services/characters.services";
 
 const useCharacterData = () => {
-  const [character, setCharacter] = useState(null);
+  const characterId = useAppSelector((state) => state.character.id);
+  const [character, setCharacter] = useState<any>({});
 
-  const handleGetCharacter = async () => {
-    const characterData = await getCharacterById();
-    setCharacter(characterData.results[0]);
+  const handleGetCharacter = async (id: number) => {
+    const characterData = await getCharacterById(id);
+    setCharacter(characterData);
   };
 
   useEffect(() => {
-    handleGetCharacter();
+    handleGetCharacter(characterId);
   }, []);
 
   return {

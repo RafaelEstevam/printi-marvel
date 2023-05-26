@@ -5,7 +5,7 @@ export interface Character {
 }
 
 const initialState: Character = {
-  id: 0,
+  id: parseInt(localStorage.getItem("characterId")) || 1010354,
 };
 
 export const characterSlice = createSlice({
@@ -14,7 +14,8 @@ export const characterSlice = createSlice({
   reducers: {
     getCaracter: (state, action) => {
       const { payload } = action;
-      state.id = payload.id;
+      localStorage.setItem("characterId", payload);
+      state.id = payload;
     },
   },
 });
