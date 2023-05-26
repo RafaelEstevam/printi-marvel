@@ -16,3 +16,8 @@ export const SectionWrapper = styled("section")<SectionWrapperProps>`
     _fullheight ? "100vh" : "inherit"};
   display: ${({ _flex }: SectionWrapperProps) => (!_flex ? "block" : "flex")};
 `;
+
+export const DivWrapper = styled("div")`
+  min-height: 100vh;
+  background: ${({ theme }: any) => theme.colors.backgroundLight};
+`;

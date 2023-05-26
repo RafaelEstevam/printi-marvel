@@ -1,10 +1,12 @@
 import Button from "../../../../components/Button/button.component";
 import Section from "../../../../components/Section/section.component";
 import Text from "../../../../components/Text/text.component";
+import useNavigationHook from "../../../../hooks/useNavigation.hook";
 import useCharacterData from "../hooks/useCharacterData.hook";
 
 const CharacterSection = () => {
   const { character } = useCharacterData();
+  const { handleNavigateTo } = useNavigationHook();
 
   return (
     <Section>
@@ -22,6 +24,9 @@ const CharacterSection = () => {
             overflow: "hidden",
             maxWidth: "300px",
             maxHeight: "300px",
+            minWidth: "300px",
+            minHeight: "300px",
+            background: "#fff",
           }}
         >
           <img
@@ -50,7 +55,10 @@ const CharacterSection = () => {
               <Text text={character?.description} _direction="justify" />
             </div>
             <div>
-              <Button label="Voltar" />
+              <Button
+                label="Voltar"
+                onClick={() => handleNavigateTo("/characters")}
+              />
             </div>
           </div>
         </div>

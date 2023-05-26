@@ -10,6 +10,7 @@ export const theme: any = {
     gray: "#00000015",
     lightGray: "#00000010",
     light: "#00000005",
+    backgroundLight: "#f1f1f1",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

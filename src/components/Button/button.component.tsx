@@ -4,6 +4,7 @@ interface ButtonProps {
   label: string;
   id: string;
   type: "button" | "submit" | "reset";
+  onClick?: () => void;
 }
 
 const Button = ({ label, ...props }: ButtonProps) => {

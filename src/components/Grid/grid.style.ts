@@ -11,6 +11,7 @@ export interface GridItemWrapperProps {
 export const GridContent = styled("div")`
   margin: 0 auto;
   max-width: ${({ theme }: any) => theme.screens.lg};
+  padding: 0px ${({ theme }: any) => theme.margin.X4};
 `;
 
 export const GridWrapper = styled("div")<SectionWrapperProps>`

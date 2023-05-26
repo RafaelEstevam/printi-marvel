@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import useNavigationHook from "../../hooks/useNavigation.hook";
 import { ColumnsProps } from "../Datatable/datatable.component";
 import Text from "../Text/text.component";
 import { TableWrapper, StyledTable, Thead, Th, Tr, Td } from "./style";
@@ -24,10 +24,10 @@ const TableColumn = ({ columns, row }: TableProps) => {
 };
 
 const Table = ({ list, columns, link, handleDispatch }: TableProps) => {
-  const navigate = useNavigate();
+  const { handleNavigateTo } = useNavigationHook();
 
   const handleRedirect = (slug: string, id: number) => {
-    navigate(`${link}${slug}`);
+    handleNavigateTo(`${link}${slug}`);
     if (handleDispatch) {
       handleDispatch(id);
     }
