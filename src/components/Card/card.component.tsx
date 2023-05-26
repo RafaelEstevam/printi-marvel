@@ -12,6 +12,6 @@ const Card = ({ children, ...props }: CardProps) => {
 export default Card;
 
 Card.defaultProps = {
-  _px: theme.margin.X4,
-  _py: theme.margin.X4,
+  _px: theme.margin.X6,
+  _py: theme.margin.X6,
 };

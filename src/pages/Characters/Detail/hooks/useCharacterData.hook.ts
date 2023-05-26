@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { getCharacterById } from "../../services/characters.services";
-import useCharacterComicsList from "./useCharacterComicsList.hook";
 
 const useCharacterData = () => {
   const [character, setCharacter] = useState(null);
 
   const handleGetCharacter = async () => {
     const characterData = await getCharacterById();
-    setCharacter(characterData);
+    setCharacter(characterData.results[0]);
   };
 
   useEffect(() => {

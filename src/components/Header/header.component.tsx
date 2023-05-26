@@ -2,10 +2,11 @@ import Grid from "../Grid/grid.component";
 import { GridContent } from "../Grid/grid.style";
 import logo1 from "../../assets/imgs/logo_1.png";
 import GridItem from "../Grid/grid.item.component";
+import { HeaderWrapper } from "./style";
 
 const Header = () => {
   return (
-    <header>
+    <HeaderWrapper>
       <GridContent>
         <Grid>
           <GridItem>
@@ -13,11 +14,12 @@ const Header = () => {
               src={logo1}
               alt="Logo Marvel Comics"
               title="Logo Marvel Comics"
+              height="40px"
             />
           </GridItem>
         </Grid>
       </GridContent>
-    </header>
+    </HeaderWrapper>
   );
 };
 

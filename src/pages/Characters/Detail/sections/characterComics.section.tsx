@@ -1,13 +1,16 @@
+import Card from "../../../../components/Card/card.component";
+import Datatable, {
+  ColumnsProps,
+} from "../../../../components/Datatable/datatable.component";
 import Section from "../../../../components/Section/section.component";
 import useCharacterComicsList from "../hooks/useCharacterComicsList.hook";
 
 const CharacterComicsSection = () => {
   const { characterComics } = useCharacterComicsList();
-  console.log(characterComics);
 
   return (
     <Section>
-      <h1>Facículos</h1>
+      <Card>teste</Card>
     </Section>
   );
 };

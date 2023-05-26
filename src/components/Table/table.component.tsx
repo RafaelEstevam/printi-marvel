@@ -1,22 +1,40 @@
-import { TableWrapper, Table as StyledTable, Thead, Th, Tr, Td } from "./style";
+import { ColumnsProps } from "../Datatable/datatable.component";
+import Text from "../Text/text.component";
+import { TableWrapper, StyledTable, Thead, Th, Tr, Td } from "./style";
 
-const Table = ({ list }: any) => {
+interface TableProps {
+  list?: any;
+  row?: any;
+  columns: ColumnsProps[];
+}
+
+const TableColumn = ({ columns, row }: TableProps) => {
+  return (
+    <>
+      {columns.map((column) => (
+        <Td key={column.key}>
+          <Text text={row[column.key]} />
+        </Td>
+      ))}
+    </>
+  );
+};
+
+const Table = ({ list, columns }: TableProps) => {
   return (
     <TableWrapper>
       <StyledTable>
         <Thead>
           <Tr>
-            <Th>Name</Th>
-            <Th>Description</Th>
-            <Th>Last Update</Th>
+            {columns?.map((column) => (
+              <Th key={column.key}>{column.label}</Th>
+            ))}
           </Tr>
         </Thead>
         <tbody>
-          {list.map((list: any) => (
-            <Tr key={list.id}>
-              <Td>{list.name}</Td>
-              <Td>{list.description}</Td>
-              <Td>{list.lastUpdate}</Td>
+          {list?.map((item: any) => (
+            <Tr key={item?.id} onClick={item?.onClick}>
+              <TableColumn {...{ columns, row: item }} />
             </Tr>
           ))}
         </tbody>

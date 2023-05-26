@@ -6,7 +6,7 @@ export interface CardWrapperProps {
 }
 
 export const CardWrapper = styled(`div`)<CardWrapperProps>`
-  padding: ${({ _px, _py }: CardWrapperProps) => `${_py}px ${_px}px`};
+  padding: ${({ _px, _py }: CardWrapperProps) => `${_py} ${_px}`};
   background-color: ${({ theme }: any) => theme.colors.white};
-  border-radius: ${({ theme }: any) => theme.border.radius}px;
+  border-radius: ${({ theme }: any) => theme.border.radiusX4};
 `;

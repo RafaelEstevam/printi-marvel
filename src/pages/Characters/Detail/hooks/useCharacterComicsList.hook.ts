@@ -6,7 +6,7 @@ const useCharacterComicsList = () => {
 
   const handleGetCharacterComics = async () => {
     const characterComicsList = await getComicsByCharacterId();
-    setCharacterComics(characterComicsList);
+    setCharacterComics(characterComicsList.results);
   };
 
   useEffect(() => {

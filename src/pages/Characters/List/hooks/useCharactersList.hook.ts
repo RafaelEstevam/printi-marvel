@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getCharacters } from "../../services/characters.services";
+import { Character, getCharacters } from "../../services/characters.services";
 
 const useCharactersList = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
 
   const handleGetCharacters = async () => {
     const charactersList = await getCharacters();
