@@ -1,12 +1,12 @@
 import * as moment from "moment";
 
-import { Character } from "../services/characters.services";
+import { CharacterTable } from "../services/characters.services";
 
 export const formatCharactersListData = (list: any) => {
-  const charactersList: Character[] = [];
+  const charactersList: CharacterTable[] = [];
 
   list.map((item: any) => {
-    const character: Character = item;
+    const character: CharacterTable = item;
     character.modified = moment(new Date(item.modified)).format(
       "DD/MM/YYYY HH:mm"
     );
@@ -15,6 +15,7 @@ export const formatCharactersListData = (list: any) => {
       .replace(" ", "-")
       .replace(/[`~!@#$%^&*()_|+\=?;:'",.<>\{\}\[\]\\\/]/gi, "")
       .replace(" ", "-");
+
     charactersList.push(character);
   });
 

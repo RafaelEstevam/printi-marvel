@@ -1,7 +1,9 @@
 import Button from "../Button/button.component";
 import { PaginationWrapper } from "./style";
 
-const Pagination = () => {
+export interface PaginationProps {}
+
+const Pagination = ({}: PaginationProps) => {
   return (
     <PaginationWrapper>
       <Button label="<" />

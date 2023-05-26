@@ -1,17 +1,16 @@
-import Pagination from "../Pagination/pagination.component";
-import Table from "../Table/table.component";
+import Pagination, {
+  PaginationProps,
+} from "../Pagination/pagination.component";
+import Table, { TableProps } from "../Table/table.component";
 
 export interface ColumnsProps {
   label: string;
   key: string;
 }
 
-interface DatatableProps {
-  list: any;
-  columns: ColumnsProps[];
-}
+interface DatatableProps extends TableProps, PaginationProps {}
 
-const Datatable = ({ list, columns }: DatatableProps) => {
+const Datatable = ({ list, columns, link, handleDispatch }: DatatableProps) => {
   return (
     <div
       style={{
@@ -22,7 +21,7 @@ const Datatable = ({ list, columns }: DatatableProps) => {
         width: "100%",
       }}
     >
-      <Table {...{ list, columns }} />
+      <Table {...{ list, columns, link, handleDispatch }} />
       <Pagination />
     </div>
   );

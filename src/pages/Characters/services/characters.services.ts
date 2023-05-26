@@ -1,19 +1,19 @@
 import { API } from "../../../services/api.service";
 import { formatCharactersListData } from "../helpers/charactersList.helper";
 
-export interface Character {
+export interface CharacterTable {
   id: number;
   name: string;
   description: string;
   modified: string;
-  link: string;
-  slug: string;
+  slug?: string;
+  redirect?: (slug: string) => {};
 }
 
 export const getCharacters = async () => {
   try {
     const response: any = await API.get("/v1/public/characters?limit=10");
-    const CharactersList: Character[] = formatCharactersListData(
+    const CharactersList: CharacterTable[] = formatCharactersListData(
       response.data.data.results
     );
     return CharactersList;

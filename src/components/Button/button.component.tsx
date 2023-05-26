@@ -3,7 +3,7 @@ import { ButtonWrapper } from "./style";
 interface ButtonProps {
   label: string;
   id: string;
-  type: string;
+  type: "button" | "submit" | "reset";
 }
 
 const Button = ({ label, ...props }: ButtonProps) => {

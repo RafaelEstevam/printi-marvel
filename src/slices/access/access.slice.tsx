@@ -1,28 +1,27 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-// import type { RootState } from '../../store'
+import { createSlice } from "@reduxjs/toolkit";
 
-export interface CounterState {
-  publicKey: string,
-  privateKey: string
+export interface AccessState {
+  publicKey: string;
+  privateKey: string;
 }
 
-const initialState: CounterState = {
-    publicKey: '',
-    privateKey: ''
-}
+const initialState: AccessState = {
+  publicKey: "",
+  privateKey: "",
+};
 
 export const accessSlice = createSlice({
-  name: 'access',
+  name: "access",
   initialState,
   reducers: {
     login: (state, action) => {
-        const {payload} = action;
-        state.publicKey = payload.publicKey
-        state.privateKey = payload.privateKey
-    }
-  }
-})
+      const { payload } = action;
+      state.publicKey = payload.publicKey;
+      state.privateKey = payload.privateKey;
+    },
+  },
+});
 
-export const { login } = accessSlice.actions
+export const { login } = accessSlice.actions;
 
-export default accessSlice.reducer
+export default accessSlice.reducer;

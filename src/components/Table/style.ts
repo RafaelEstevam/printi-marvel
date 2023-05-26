@@ -21,6 +21,13 @@ export const Th = styled("th")`
 `;
 
 export const Tr = styled("tr")`
+  transition: linear all 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 6px ${({ theme }: any) => theme.colors.primary}80;
+  }
+
   td:nth-child(2n + 1),
   th:nth-child(2n + 1) {
     background: ${({ theme }: any) => theme.colors.lightGray};
