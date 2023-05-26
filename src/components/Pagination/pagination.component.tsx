@@ -1,5 +1,5 @@
 import Button from "../Button/button.component";
-import { PaginationWrapper } from "./style";
+import { PaginationWrapper } from "./pagination.style";
 
 export interface PaginationProps {}
 

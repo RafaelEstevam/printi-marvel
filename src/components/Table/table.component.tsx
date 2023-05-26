@@ -1,7 +1,7 @@
 import useNavigationHook from "../../hooks/useNavigation.hook";
 import { ColumnsProps } from "../Datatable/datatable.component";
 import Text from "../Text/text.component";
-import { TableWrapper, StyledTable, Thead, Th, Tr, Td } from "./style";
+import { TableWrapper, StyledTable, Thead, Th, Tr, Td } from "./table.style";
 
 export interface TableProps {
   link?: string;

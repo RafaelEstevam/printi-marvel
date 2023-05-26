@@ -1,7 +1,6 @@
-import { ReactNode } from "react";
 import { theme } from "../../styles/theme";
 import { DivProps } from "../../types";
-import { CardWrapper, CardWrapperProps } from "./style";
+import { CardWrapper, CardWrapperProps } from "./card.style";
 
 export interface CardProps extends DivProps, CardWrapperProps {}
 

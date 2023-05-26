@@ -1,4 +1,4 @@
-import { FooterWrapper } from "./style";
+import { FooterWrapper } from "./footer.style";
 
 const Footer = () => {
   return <FooterWrapper></FooterWrapper>;

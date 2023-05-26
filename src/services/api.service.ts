@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getAccess } from "../helpers/getAccess.helper";
 
 const API = axios.create({
   baseURL: `https://gateway.marvel.com`,
@@ -10,8 +11,11 @@ const API = axios.create({
 
 API.interceptors.request.use(
   (config) => {
+    const access = getAccess();
     config.params = {
-      apikey: "b042a4b613ce6b0f1270c6455c7cc9b3",
+      apikey: access.publicKey,
+      ts: "1",
+      hash: access.hash,
     };
     return config;
   },

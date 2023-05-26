@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../../hooks";
 import { getCharacterById } from "../../services/characters.services";
 

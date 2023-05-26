@@ -9,10 +9,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body{
-    background: #bf040a;
+    background: #870000;
     background-image: url(${background});
-    background-blend-mode: overlay;
-    background-size: 100% auto;
+    background-blend-mode: multiply;
+    background-size: auto 100% ;
   }
 `;
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { getCaracter } from "../../../../slices/character/character.slice";
 import {
   CharacterTable,
@@ -7,6 +7,7 @@ import {
 } from "../../services/characters.services";
 
 const useCharactersList = () => {
+  const test = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
   const [characters, setCharacters] = useState<CharacterTable[]>([]);

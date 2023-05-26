@@ -19,7 +19,5 @@ export const formatCharactersListData = (list: any) => {
     charactersList.push(character);
   });
 
-  console.log(charactersList);
-
   return charactersList;
 };

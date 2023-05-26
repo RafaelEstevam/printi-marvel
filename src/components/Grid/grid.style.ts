@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { SectionWrapperProps } from "../Section/style";
+import { SectionWrapperProps } from "../Section/section.style";
 
 export interface GridItemWrapperProps {
   _lg?: number;

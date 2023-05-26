@@ -1,5 +1,5 @@
 import { DivProps } from "../../types";
-import { SectionWrapperProps } from "../Section/style";
+import { SectionWrapperProps } from "../Section/section.style";
 import { GridWrapper } from "./grid.style";
 
 export interface GridProps extends DivProps, SectionWrapperProps {}

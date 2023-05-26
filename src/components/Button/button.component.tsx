@@ -1,4 +1,4 @@
-import { ButtonWrapper } from "./style";
+import { ButtonWrapper } from "./button.style";
 
 interface ButtonProps {
   label: string;

@@ -1,4 +1,4 @@
-import { TextWrapper } from "./style";
+import { TextWrapper } from "./text.style";
 
 interface TextProps {
   text: string;
