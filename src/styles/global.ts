@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import background from "../assets/imgs/download.jpeg";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,7 +9,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body{
-    background: ${({ theme }: any) => theme.colors.lightGray}
+    background: #bf040a;
+    background-image: url(${background});
+    background-blend-mode: overlay;
+    background-size: 100% auto;
   }
 `;
 
