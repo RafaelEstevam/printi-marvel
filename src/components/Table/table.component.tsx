@@ -11,6 +11,10 @@ export interface TableProps {
   handleDispatch?: (props: any) => any;
 }
 
+const TableNoContent = () => {
+  return <Text text="Loading content..." />;
+};
+
 const TableColumn = ({ columns, row }: TableProps) => {
   return (
     <>
@@ -33,7 +37,7 @@ const Table = ({ list, columns, link, handleDispatch }: TableProps) => {
     }
   };
 
-  return (
+  return list.length > 0 ? (
     <TableWrapper>
       <StyledTable>
         <Thead>
@@ -55,6 +59,10 @@ const Table = ({ list, columns, link, handleDispatch }: TableProps) => {
         </tbody>
       </StyledTable>
     </TableWrapper>
+  ) : (
+    <>
+      <TableNoContent />
+    </>
   );
 };
 

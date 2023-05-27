@@ -7,6 +7,7 @@ export interface SectionWrapperProps {
   _gap?: string;
   _flex: boolean;
   _fullheight?: boolean;
+  _px?: number;
 }
 
 export const SectionWrapper = styled("section")<SectionWrapperProps>`
@@ -15,6 +16,7 @@ export const SectionWrapper = styled("section")<SectionWrapperProps>`
   height: ${({ _fullheight }: SectionWrapperProps) =>
     _fullheight ? "100vh" : "inherit"};
   display: ${({ _flex }: SectionWrapperProps) => (!_flex ? "block" : "flex")};
+  padding: ${({ _px }: SectionWrapperProps) => `0px ${_px}`};
 `;
 
 export const DivWrapper = styled("div")`

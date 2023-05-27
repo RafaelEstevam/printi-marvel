@@ -10,7 +10,13 @@ export interface ColumnsProps {
 
 interface DatatableProps extends TableProps, PaginationProps {}
 
-const Datatable = ({ list, columns, link, handleDispatch }: DatatableProps) => {
+const Datatable = ({
+  list,
+  columns,
+  link,
+  handleDispatch,
+  ...pagination
+}: DatatableProps) => {
   return (
     <div
       style={{
@@ -22,7 +28,7 @@ const Datatable = ({ list, columns, link, handleDispatch }: DatatableProps) => {
       }}
     >
       <Table {...{ list, columns, link, handleDispatch }} />
-      <Pagination />
+      <Pagination {...pagination} />
     </div>
   );
 };

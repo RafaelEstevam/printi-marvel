@@ -1,10 +1,11 @@
-import { ButtonWrapper } from "./button.style";
+import { ButtonWrapper, ButtonWrapperProps } from "./button.style";
 
-interface ButtonProps {
-  label: string;
+interface ButtonProps extends ButtonWrapperProps {
+  label: string | number;
   id: string;
   type: "button" | "submit" | "reset";
   onClick?: () => void;
+  className?: string;
 }
 
 const Button = ({ label, ...props }: ButtonProps) => {

@@ -2,6 +2,7 @@ import Button from "../../../../components/Button/button.component";
 import Section from "../../../../components/Section/section.component";
 import Text from "../../../../components/Text/text.component";
 import useNavigationHook from "../../../../hooks/useNavigation.hook";
+import { theme } from "../../../../styles/theme";
 import useCharacterData from "../hooks/useCharacterData.hook";
 
 const CharacterSection = () => {
@@ -9,7 +10,7 @@ const CharacterSection = () => {
   const { handleNavigateTo } = useNavigationHook();
 
   return (
-    <Section>
+    <Section _px={theme.margin.X4}>
       <div
         style={{
           display: "flex",

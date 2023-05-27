@@ -9,6 +9,7 @@ interface InputProps {
   state: any;
   set: (state?: any) => any;
   required?: boolean;
+  type?: string;
 }
 
 const Input = ({ set, name, state, value, ...props }: InputProps) => {

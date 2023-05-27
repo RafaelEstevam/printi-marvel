@@ -10,8 +10,6 @@ export interface AccessState {
   hash: string;
 }
 
-console.log(localStorageState);
-
 const initialState = localStorageState
   ? JSON.parse(localStorageState)
   : { publicKey: "", privateKey: "", hash: "" };

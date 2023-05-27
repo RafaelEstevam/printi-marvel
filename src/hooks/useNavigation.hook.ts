@@ -7,8 +7,13 @@ const useNavigationHook = () => {
     navigate(to);
   };
 
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   return {
     handleNavigateTo,
+    handleLogout,
   };
 };
 

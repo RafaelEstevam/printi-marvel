@@ -8,7 +8,7 @@ const useCharacterData = () => {
 
   const handleGetCharacter = async (id: number) => {
     const characterData = await getCharacterById(id);
-    setCharacter(characterData);
+    setCharacter(characterData.results[0]);
   };
 
   useEffect(() => {

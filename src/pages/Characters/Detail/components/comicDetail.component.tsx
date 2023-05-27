@@ -2,14 +2,28 @@ import Card from "../../../../components/Card/card.component";
 import Text from "../../../../components/Text/text.component";
 import { theme } from "../../../../styles/theme";
 
-const ComicDetail = () => {
+export interface ComicsProps {
+  title: string;
+  description: string;
+  modified: string;
+  id: number;
+  img: string;
+}
+
+const ComicDetail = ({
+  id,
+  description,
+  img,
+  modified,
+  title,
+}: ComicsProps) => {
   return (
     <Card>
-      <div style={{ display: "flex", width: "100%", gap: 24 }}>
+      <div style={{ display: "flex", width: "100%", gap: 16 }}>
         <div
-          style={{ borderRadius: "16px", width: "300px", background: "#ccc" }}
+          style={{ borderRadius: "16px", width: "100px", overflow: "hidden" }}
         >
-          <img src="" />
+          <img src={img} title={title} style={{ width: "100%" }} />
         </div>
         <div
           style={{
@@ -34,7 +48,7 @@ const ComicDetail = () => {
               }}
             >
               <Text text="Título: " variant="p" />
-              <Text text="Nome do quadrinho" variant="h3" />
+              <Text text={title} variant="h3" />
             </div>
             <div
               style={{
@@ -44,7 +58,7 @@ const ComicDetail = () => {
               }}
             >
               <Text text="Número da capa: " variant="p" />
-              <Text text="1234" variant="h3" />
+              <Text text={id} variant="h3" />
             </div>
           </div>
           <div
@@ -55,7 +69,7 @@ const ComicDetail = () => {
               borderRadius: theme.border.radiusX4,
             }}
           >
-            <Text text="Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!" />
+            <Text text={description} variant="p" />
           </div>
         </div>
       </div>

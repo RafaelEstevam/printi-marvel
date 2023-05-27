@@ -1,7 +1,7 @@
 import { TextWrapper } from "./text.style";
 
 interface TextProps {
-  text: string;
+  text: string | number;
   variant?: string;
   _direction?: string;
 }

@@ -11,4 +11,5 @@ export const CardWrapper = styled(`div`)<CardWrapperProps>`
   background-color: ${({ theme, _bg }: any) =>
     !_bg ? theme.colors.white : _bg};
   border-radius: ${({ theme }: any) => theme.border.radiusX4};
+  width: 100%;
 `;
