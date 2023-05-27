@@ -1,3 +1,4 @@
+import { theme } from "../../../../styles/theme";
 import Button from "../../../../components/Button/button.component";
 import {
   Div,
@@ -5,8 +6,8 @@ import {
 } from "../../../../components/Layout/layout.style";
 import Section from "../../../../components/Section/section.component";
 import Text from "../../../../components/Text/text.component";
+import Image from "../../../../components/Image/image.component";
 import useNavigationHook from "../../../../hooks/useNavigation.hook";
-import { theme } from "../../../../styles/theme";
 import useCharacterData from "../hooks/useCharacterData.hook";
 
 const CharacterSection = () => {
@@ -26,18 +27,16 @@ const CharacterSection = () => {
           {...{
             _borderRadius: "100%",
             _overflow: "hidden",
-            _maxWidth: "300px",
-            _maxHeight: "300px",
-            _minWidth: "300px",
-            _minHeight: "300px",
+            _maxWidth: "250px",
+            _minHeight: "auto",
             _background: "#fff",
           }}
         >
-          <img
+          <Image
             src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
             title={character?.name}
             alt={character?.name}
-            height="300px"
+            _height="250px"
           />
         </Div>
         <Div {...divStyle}>
@@ -52,12 +51,12 @@ const CharacterSection = () => {
             <Div {...{ _maxWidth: "80%" }}>
               <Text text={character?.description} _direction="justify" />
             </Div>
-            <div>
+            <Div>
               <Button
                 label="Back"
                 onClick={() => handleNavigateTo("/characters")}
               />
-            </div>
+            </Div>
           </Div>
         </Div>
       </Div>

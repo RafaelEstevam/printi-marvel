@@ -1,7 +1,7 @@
 import Pagination from "../../../../components/Pagination/pagination.component";
 import Section from "../../../../components/Section/section.component";
 import { theme } from "../../../../styles/theme";
-import ComicDetail, { ComicsProps } from "../components/comicDetail.component";
+import ComicDetail, { ComicsProps } from "../components/comicsDetail.component";
 import useCharacterComicsList from "../hooks/useCharacterComicsList.hook";
 
 const CharacterComicsSection = () => {

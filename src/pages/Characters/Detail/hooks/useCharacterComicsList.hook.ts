@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { PaginationProps } from "../../../../components/Pagination/pagination.component";
 import { useAppSelector } from "../../../../hooks";
 import { getComicsByCharacterId } from "../../services/characters.services";
-import { ComicsProps } from "../components/comicDetail.component";
+import { ComicsProps } from "../components/comicsDetail.component";
 
 const useCharacterComicsList = () => {
   const characterId = useAppSelector((state) => state.character.id);

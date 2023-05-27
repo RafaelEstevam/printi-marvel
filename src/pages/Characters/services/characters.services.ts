@@ -1,6 +1,6 @@
 import { PaginationProps } from "../../../components/Pagination/pagination.component";
 import { API } from "../../../services/api.service";
-import { ComicsProps } from "../Detail/components/comicDetail.component";
+import { ComicsProps } from "../Detail/components/comicsDetail.component";
 import { formatCharactersListData } from "../helpers/charactersList.helper";
 import { formatComicsListData } from "../helpers/comicsList.helper";
 

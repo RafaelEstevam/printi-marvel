@@ -1,5 +1,5 @@
 import moment from "moment";
-import { ComicsProps } from "../Detail/components/comicDetail.component";
+import { ComicsProps } from "../Detail/components/comicsDetail.component";
 
 export const formatComicsListData = (list: any) => {
   const comicsList: ComicsProps[] = [];
