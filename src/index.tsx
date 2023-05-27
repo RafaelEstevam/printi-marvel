@@ -2,6 +2,7 @@ import * as ReactDOM from "react-dom/client";
 import App from "./app";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { SnackbarProvider } from "notistack";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -11,8 +12,14 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <SnackbarProvider
+      preventDuplicate
+      autoHideDuration={1000}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+    >
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SnackbarProvider>
   </Provider>
 );

@@ -23,22 +23,25 @@ const CharacterSection = () => {
   return (
     <Section _px={theme.margin.X4}>
       <Div {...divStyle} _padding={`${theme.margin.X6} 0px`}>
-        <Div
-          {...{
-            _borderRadius: "100%",
-            _overflow: "hidden",
-            _maxWidth: "250px",
-            _minHeight: "auto",
-            _background: "#fff",
-          }}
-        >
-          <Image
-            src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
-            title={character?.name}
-            alt={character?.name}
-            _height="250px"
-          />
-        </Div>
+        {character && (
+          <Div
+            {...{
+              _borderRadius: "100%",
+              _overflow: "hidden",
+              _maxWidth: "250px",
+              _minHeight: "auto",
+              _background: "#fff",
+            }}
+          >
+            <Image
+              src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
+              title={character?.name}
+              alt={character?.name}
+              _height="250px"
+            />
+          </Div>
+        )}
+
         <Div {...divStyle}>
           <Text variant="h1" text={character?.name} _direction="center" />
           <Div

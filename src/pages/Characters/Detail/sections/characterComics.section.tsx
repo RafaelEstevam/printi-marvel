@@ -22,6 +22,7 @@ const CharacterComicsSection = () => {
           <ComicDetail
             key={comics.id}
             id={comics.id}
+            issueNumber={comics.issueNumber}
             description={comics.description}
             img={comics.img}
             modified={comics.modified}

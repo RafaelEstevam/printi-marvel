@@ -14,9 +14,16 @@ export interface ComicsProps {
   modified: string;
   id: number;
   img: string;
+  issueNumber: number;
 }
 
-const ComicDetail = ({ id, description, img, title }: ComicsProps) => {
+const ComicDetail = ({
+  id,
+  description,
+  img,
+  title,
+  issueNumber,
+}: ComicsProps) => {
   const divStyle: StyledDivProps = {
     _display: "flex",
     _width: "100%",
@@ -44,12 +51,12 @@ const ComicDetail = ({ id, description, img, title }: ComicsProps) => {
         <Div {...divStyle} _flexDirection="column">
           <ComicsTitleWrapper>
             <ComicsTitle>
-              <Text text="Título: " variant="p" />
+              <Text text="Title: " variant="p" />
               <Text text={title} variant="h3" />
             </ComicsTitle>
             <ComicsTitle>
-              <Text text="Número da capa: " variant="p" />
-              <Text text={id} variant="h3" />
+              <Text text="Number: " variant="p" />
+              <Text text={issueNumber} variant="h3" />
             </ComicsTitle>
           </ComicsTitleWrapper>
           {description && (
