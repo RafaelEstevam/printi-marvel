@@ -1,7 +1,15 @@
 import useNavigationHook from "../../hooks/useNavigation.hook";
 import { ColumnsProps } from "../Datatable/datatable.component";
 import Text from "../Text/text.component";
-import { TableWrapper, StyledTable, Thead, Th, Tr, Td } from "./table.style";
+import {
+  TableWrapper,
+  StyledTable,
+  Thead,
+  Th,
+  Tr,
+  Td,
+  Tbody,
+} from "./table.style";
 
 export interface TableProps {
   link?: string;
@@ -43,11 +51,13 @@ const Table = ({ list, columns, link, handleDispatch }: TableProps) => {
         <Thead>
           <Tr>
             {columns?.map((column) => (
-              <Th key={column.key}>{column.label}</Th>
+              <Th key={column.key}>
+                <Text text={column.label} />
+              </Th>
             ))}
           </Tr>
         </Thead>
-        <tbody>
+        <Tbody>
           {list?.map((item: any) => (
             <Tr
               key={item?.id}
@@ -56,7 +66,7 @@ const Table = ({ list, columns, link, handleDispatch }: TableProps) => {
               <TableColumn {...{ columns, row: item }} />
             </Tr>
           ))}
-        </tbody>
+        </Tbody>
       </StyledTable>
     </TableWrapper>
   ) : (

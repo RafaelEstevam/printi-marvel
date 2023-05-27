@@ -14,10 +14,26 @@ export const theme: any = {
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
-    small: "1em",
-    medium: "1.5em",
-    large: "2em",
-    largest: "2.5em",
+    small: "1rem",
+    medium: "1.5rem",
+    large: "2rem",
+    largest: "2.5rem",
+  },
+  mobile: {
+    fontSizes: {
+      small: constant * 3 + "px",
+      medium: constant * 4 + "px",
+      large: constant * 5 + "px",
+      largest: constant * 6 + "px",
+    },
+    margin: {
+      X1: constant + "px", //4px
+      X2: constant * 2 + "px", //8px
+      X3: constant * 3 + "px", //12px
+      X4: constant * 4 + "px", //16px
+      X5: constant * 5 + "px", //20px
+      X6: constant * 6 + "px", //24px
+    },
   },
   screens: {
     md: "1024px",

@@ -1,4 +1,8 @@
 import Button from "../../../../components/Button/button.component";
+import {
+  Div,
+  StyledDivProps,
+} from "../../../../components/Layout/layout.style";
 import Section from "../../../../components/Section/section.component";
 import Text from "../../../../components/Text/text.component";
 import useNavigationHook from "../../../../hooks/useNavigation.hook";
@@ -9,61 +13,54 @@ const CharacterSection = () => {
   const { character } = useCharacterData();
   const { handleNavigateTo } = useNavigationHook();
 
+  const divStyle: StyledDivProps = {
+    _display: "flex",
+    _flexDirection: "column",
+    _alignItems: "center",
+  };
+
   return (
     <Section _px={theme.margin.X4}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "24px 0px",
-        }}
-      >
-        <div
-          style={{
-            borderRadius: "100%",
-            overflow: "hidden",
-            maxWidth: "300px",
-            maxHeight: "300px",
-            minWidth: "300px",
-            minHeight: "300px",
-            background: "#fff",
+      <Div {...divStyle} _padding={`${theme.margin.X6} 0px`}>
+        <Div
+          {...{
+            _borderRadius: "100%",
+            _overflow: "hidden",
+            _maxWidth: "300px",
+            _maxHeight: "300px",
+            _minWidth: "300px",
+            _minHeight: "300px",
+            _background: "#fff",
           }}
         >
           <img
             src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
+            title={character?.name}
+            alt={character?.name}
             height="300px"
           />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        </Div>
+        <Div {...divStyle}>
           <Text variant="h1" text={character?.name} _direction="center" />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 24,
-              padding: "0px 16px",
-              alignItems: "center",
+          <Div
+            {...divStyle}
+            {...{
+              _gap: theme.margin.X6,
+              _padding: `0px ${theme.margin.X4}`,
             }}
           >
-            <div style={{ maxWidth: "80%" }}>
+            <Div {...{ _maxWidth: "80%" }}>
               <Text text={character?.description} _direction="justify" />
-            </div>
+            </Div>
             <div>
               <Button
-                label="Voltar"
+                label="Back"
                 onClick={() => handleNavigateTo("/characters")}
               />
             </div>
-          </div>
-        </div>
-      </div>
+          </Div>
+        </Div>
+      </Div>
     </Section>
   );
 };

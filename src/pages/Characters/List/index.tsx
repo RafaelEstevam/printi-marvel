@@ -12,9 +12,9 @@ import useCharactersList from "./hooks/useCharactersList.hook";
 
 const columns: ColumnsProps[] = [
   { key: "id", label: "" },
-  { key: "name", label: "Nome" },
-  { key: "description", label: "Descrição" },
-  { key: "modified", label: "Última atualização" },
+  { key: "name", label: "Name" },
+  { key: "description", label: "Description" },
+  { key: "modified", label: "Last modification" },
 ];
 
 const CharactersList = () => {
@@ -26,7 +26,7 @@ const CharactersList = () => {
       <Section _px={theme.margin.X4}>
         <Grid>
           <GridItem _lg={12} _md={12} _sm={12} _xs={12}>
-            <Text text="Personagens" variant="h1" />
+            <Text text="Characters" variant="h1" />
             <Card>
               <Datatable
                 list={characters}

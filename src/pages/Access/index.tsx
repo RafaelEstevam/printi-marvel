@@ -8,9 +8,17 @@ import logo1 from "../../assets/imgs/logo_1.png";
 import useFormData from "./hooks/useFormData.hook";
 import Input from "../../components/Input/input.component";
 import Button from "../../components/Button/button.component";
+import { theme } from "../../styles/theme";
+import { Div, StyledDivProps } from "../../components/Layout/layout.style";
 
 const Access = () => {
   const { formData, setFormData, submitAccessForm } = useFormData();
+
+  const divStyle: StyledDivProps = {
+    _display: "flex",
+    _flexDirection: "column",
+    _alignItems: "center",
+  };
 
   return (
     <Section
@@ -19,6 +27,7 @@ const Access = () => {
       _alignitems="center"
       _flex
       _direction="column"
+      _px={theme.margin.X4}
     >
       <Grid
         {...{
@@ -28,38 +37,23 @@ const Access = () => {
           _justifycontent: "center",
         }}
       >
-        <GridItem {...{ _lg: 4, _md: 4, _sm: 8, _xs: 12 }}>
+        <GridItem {...{ _lg: 4, _md: 6, _sm: 8, _xs: 12 }}>
           <Card>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 24,
-              }}
-            >
+            <Div {...divStyle} _gap={theme.margin.X4}>
               <img
                 src={logo1}
                 alt="Logo Marvel Comics"
                 title="Logo Marvel Comics"
               />
               <Text text="Login" variant="h2" />
-            </div>
+            </Div>
 
             <form onSubmit={submitAccessForm}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 16,
-                  width: "100%",
-                }}
-              >
+              <Div {...divStyle} _gap={theme.margin.X6}>
                 <Input
                   set={setFormData}
                   state={formData}
-                  placeholder="Insira sua chave privada"
+                  placeholder="Insert your private key"
                   name="privateKey"
                   id="privateKey"
                   value={formData.privateKey}
@@ -69,15 +63,15 @@ const Access = () => {
                 <Input
                   set={setFormData}
                   state={formData}
-                  placeholder="Insira sua chave pública"
+                  placeholder="Insert your public key"
                   name="publicKey"
                   id="publicKey"
                   value={formData.publicKey}
                   required
                 />
 
-                <Button id="login-button" label="Acessar" type="submit" />
-              </div>
+                <Button id="login-button" label="Login" type="submit" />
+              </Div>
             </form>
           </Card>
         </GridItem>

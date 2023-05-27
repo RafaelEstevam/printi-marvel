@@ -29,7 +29,7 @@ const Header = () => {
           <Button
             className="logout"
             id="logout"
-            label="Sair"
+            label="Logout"
             onClick={() => handleLogout()}
             _color={theme.colors.white}
           />

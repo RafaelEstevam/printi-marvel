@@ -21,4 +21,25 @@ export const TextWrapper = styled("div")<{ _direction?: string }>`
   p {
     font-size: ${({ theme }: any) => theme.fontSizes.small};
   }
+
+  @media (max-width: ${({ theme }: any) => theme.screens.sm}) {
+    h1 {
+      font-size: ${({ theme }: any) => theme.mobile.fontSizes.largest};
+      padding: ${({ theme }: any) => theme.mobile.margin.X4};
+    }
+
+    h2 {
+      font-size: ${({ theme }: any) => theme.mobile.fontSizes.large};
+      padding: ${({ theme }: any) => theme.mobile.margin.X3};
+    }
+
+    h3 {
+      font-size: ${({ theme }: any) => theme.mobile.fontSizes.medium};
+      padding: ${({ theme }: any) => theme.mobile.margin.X2};
+    }
+
+    p {
+      font-size: ${({ theme }: any) => theme.mobile.fontSizes.small};
+    }
+  }
 `;
