@@ -36,15 +36,17 @@ const SearchPagePagination = ({
         <Button
           id={`button-id-search`}
           label={"Search"}
-          disabled={formData.searchNumber > max || formData.searchNumber < min}
-          onClick={() => handleSearch(formData.searchNumber * 10)}
+          disabled={
+            formData.searchNumber > max + 1 || formData.searchNumber < min + 1
+          }
+          onClick={() => handleSearch((formData.searchNumber - 1) * 10)}
         />
       </Div>
-      {formData.searchNumber > max && (
+      {formData.searchNumber > max + 1 && (
         <Text variant="small" text={`Max page ${max + 1}`} />
       )}
 
-      {formData.searchNumber < min && (
+      {formData.searchNumber < min + 1 && (
         <Text variant="small" text={`Min page ${min + 1}`} />
       )}
     </Div>
