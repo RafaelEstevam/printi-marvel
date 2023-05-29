@@ -17,7 +17,7 @@ const SearchPagePagination = ({
   const min = 0;
 
   const [formData, setFormData] = useState({
-    searchNumber: 0,
+    searchNumber: 1,
   });
 
   return (
@@ -46,7 +46,7 @@ const SearchPagePagination = ({
         <Text variant="small" text={`Max page ${max + 1}`} />
       )}
 
-      {formData.searchNumber + 1 < min && (
+      {formData.searchNumber < min + 1 && (
         <Text variant="small" text={`Min page 1`} />
       )}
     </Div>
