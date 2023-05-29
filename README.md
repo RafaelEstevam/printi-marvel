@@ -6,11 +6,11 @@ The project consists in to build of web system where the user can search for cha
 
 This project was build on React, with own Webpack config, and other technologies of the React Ecosystem, such as Redux, React router dom, etc...
 
-This application does a integration with the [Marvel Developer API]("https://developer.marvel.com/") to get the characters, character's detail and your comics related.
+This application does a integration with the <a href="https://developer.marvel.com/" target="_blank">Marvel Developer API</a> to get the characters, character's detail and your comics related.
 
 ## Architecture
 
-This project was published on [Netlify Host]("https://www.netlify.com/")
+This project was published on <a href="https://www.netlify.com/" target="_blank" >Netlify Host</a>
 
 ## Runing the project
 
@@ -20,7 +20,7 @@ This project was published on [Netlify Host]("https://www.netlify.com/")
 npm install
 ```
 
-- Run app on "http://localhost:8080"
+- Run app on address <a href="http://localhost:8080">http://localhost:8080</a>
 
 ```
 npm start
