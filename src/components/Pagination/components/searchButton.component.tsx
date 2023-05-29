@@ -14,7 +14,7 @@ const SearchPagePagination = ({
   handleSearch,
   max,
 }: searchPagePaginationProps) => {
-  const min = 0;
+  const min = 1;
 
   const [formData, setFormData] = useState({
     searchNumber: 0,
