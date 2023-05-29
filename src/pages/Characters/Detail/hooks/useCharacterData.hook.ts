@@ -5,9 +5,10 @@ import { getCharacterById } from "../../services/characters.services";
 const useCharacterData = () => {
   const characterId = useAppSelector((state) => state.character.id);
   const [character, setCharacter] = useState<any>({});
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleGetCharacter = async (id: number) => {
-    const characterData = await getCharacterById(id);
+    const characterData = await getCharacterById(id, setLoading);
     if (characterData) {
       setCharacter(characterData?.results[0]);
     }
@@ -19,6 +20,7 @@ const useCharacterData = () => {
 
   return {
     character,
+    loading,
   };
 };
 

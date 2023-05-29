@@ -15,14 +15,19 @@ import usePagination from "../../../../hooks/usePagination.hook";
 
 const useCharactersList = () => {
   const dispatch = useAppDispatch();
+
   const { currentPage, handleSetPaginationOnStorage } = usePagination({
     paginationProps: "charactersListPageOffset",
   });
   const [characters, setCharacters] = useState<CharacterTable[]>([]);
   const [pagination, setPagination] = useState<PaginationProps>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleGetCharacters = async (page?: number) => {
-    const { charactersList, pagination } = await getCharacters(page);
+    const { charactersList, pagination } = await getCharacters(
+      page,
+      setLoading
+    );
     setCharacters(charactersList);
     setPagination(pagination);
   };
@@ -45,6 +50,7 @@ const useCharactersList = () => {
     pagination,
     handleLoading,
     handleDispatch,
+    loading,
   };
 };
 

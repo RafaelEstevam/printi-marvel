@@ -10,12 +10,17 @@ const useCharacterComicsList = () => {
   const characterId = useAppSelector((state) => state.character.id);
   const [characterComics, setCharacterComics] = useState<ComicsProps[]>(null);
   const [pagination, setPagination] = useState<PaginationProps>();
+  const [loading, setLoading] = useState<boolean>(false);
   const { currentPage, handleSetPaginationOnStorage } = usePagination({
     paginationProps: "characterComicsListPageOffset",
   });
 
   const handleGetCharacterComics = async (id: number, page?: number) => {
-    const { comicsList, pagination } = await getComicsByCharacterId(id, page);
+    const { comicsList, pagination } = await getComicsByCharacterId(
+      id,
+      page,
+      setLoading
+    );
     setCharacterComics(comicsList);
     setPagination(pagination);
   };
@@ -33,6 +38,7 @@ const useCharacterComicsList = () => {
     characterComics,
     pagination,
     handleLoading,
+    loading,
   };
 };
 

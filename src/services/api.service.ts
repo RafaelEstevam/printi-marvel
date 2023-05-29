@@ -21,7 +21,6 @@ API.interceptors.request.use(
       hash: access.hash,
     };
 
-    snack = enqueueSnackbar("Loading", { variant: "info" });
     return config;
   },
   (error) => {

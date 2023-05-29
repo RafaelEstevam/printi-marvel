@@ -13,7 +13,12 @@ export interface CharacterTable {
   redirect?: (slug: string) => {};
 }
 
-export const getCharacters = async (page?: number) => {
+export const getCharacters = async (
+  page?: number,
+  setLoading?: (show: boolean) => any
+) => {
+  setLoading(true);
+
   try {
     const response: any = await API.get(
       `/v1/public/characters?limit=10&offset=${page}`
@@ -33,22 +38,34 @@ export const getCharacters = async (page?: number) => {
   } catch {
     const charactersList: CharacterTable[] = [];
     return { charactersList };
+  } finally {
+    setLoading(false);
   }
 };
 
-export const getCharacterById = async (id: number) => {
+export const getCharacterById = async (
+  id: number,
+  setLoading?: (show: boolean) => any
+) => {
+  setLoading(true);
+
   try {
     const response: any = await API.get(`/v1/public/characters/${id}`);
     return response.data.data;
   } catch {
     return null;
+  } finally {
+    setLoading(false);
   }
 };
 
 export const getComicsByCharacterId = async (
   characterId: number,
-  page?: number
+  page?: number,
+  setLoading?: (show: boolean) => any
 ) => {
+  setLoading(true);
+
   try {
     const response: any = await API.get(
       `/v1/public/characters/${characterId}/comics?limit=10&offset=${page}`
@@ -75,5 +92,7 @@ export const getComicsByCharacterId = async (
     };
 
     return { comicsList, pagination };
+  } finally {
+    setLoading(false);
   }
 };

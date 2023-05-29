@@ -4,6 +4,7 @@ import Datatable, {
 } from "../../../components/Datatable/datatable.component";
 import Grid from "../../../components/Grid/grid.component";
 import GridItem from "../../../components/Grid/grid.item.component";
+import Loading from "../../../components/Loading/loading.component";
 import Section from "../../../components/Section/section.component";
 import Text from "../../../components/Text/text.component";
 import { useAppDispatch } from "../../../hooks";
@@ -18,11 +19,12 @@ const columns: ColumnsProps[] = [
 ];
 
 const CharactersList = () => {
-  const { characters, pagination, handleDispatch, handleLoading } =
+  const { loading, characters, pagination, handleDispatch, handleLoading } =
     useCharactersList();
 
   return (
     <>
+      <Loading loading={loading} />
       <Section _px={theme.margin.X4}>
         <Grid>
           <GridItem _lg={12} _md={12} _sm={12} _xs={12}>

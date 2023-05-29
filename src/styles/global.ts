@@ -36,6 +36,11 @@ const GlobalStyle = createGlobalStyle`
     background-size: auto 100% ;
   }
 
+  ul, li{
+    text-decoration: none;
+    list-style: none;
+  }
+
 `;
 
 export default GlobalStyle;

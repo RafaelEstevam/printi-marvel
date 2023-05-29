@@ -70,7 +70,7 @@ const ComicDetail = ({
                 _borderradius: theme.border.radiusX4,
               }}
             >
-              <Text text={description} variant="p" />
+              <div dangerouslySetInnerHTML={{ __html: description }} />
             </Div>
           )}
         </Div>
