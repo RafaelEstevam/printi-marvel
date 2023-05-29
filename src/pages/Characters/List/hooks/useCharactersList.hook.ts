@@ -7,9 +7,17 @@ import {
   getCharacters,
 } from "../../services/characters.services";
 
+import {
+  getPaginationOnStorage,
+  setPaginationOnStorage,
+} from "../../../../helpers/paginationPersist.helper";
+import usePagination from "../../../../hooks/usePagination.hook";
+
 const useCharactersList = () => {
   const dispatch = useAppDispatch();
-
+  const { currentPage, handleSetPaginationOnStorage } = usePagination({
+    paginationProps: "charactersListPageOffset",
+  });
   const [characters, setCharacters] = useState<CharacterTable[]>([]);
   const [pagination, setPagination] = useState<PaginationProps>();
 
@@ -25,10 +33,11 @@ const useCharactersList = () => {
 
   const handleLoading = (page: number) => {
     handleGetCharacters(page);
+    handleSetPaginationOnStorage(page);
   };
 
   useEffect(() => {
-    handleGetCharacters();
+    handleGetCharacters(currentPage || 0);
   }, []);
 
   return {

@@ -9,6 +9,7 @@ import Text from "../../../../components/Text/text.component";
 import Image from "../../../../components/Image/image.component";
 import useNavigationHook from "../../../../hooks/useNavigation.hook";
 import useCharacterData from "../hooks/useCharacterData.hook";
+import { removePaginationOnStorage } from "../../../../helpers/paginationPersist.helper";
 
 const CharacterSection = () => {
   const { character } = useCharacterData();
@@ -63,7 +64,10 @@ const CharacterSection = () => {
             <Div>
               <Button
                 label="Back"
-                onClick={() => handleNavigateTo("/characters")}
+                onClick={() => {
+                  handleNavigateTo("/characters");
+                  removePaginationOnStorage("characterComicsListPageOffset");
+                }}
               />
             </Div>
           </Div>
