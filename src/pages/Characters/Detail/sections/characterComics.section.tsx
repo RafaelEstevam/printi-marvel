@@ -11,6 +11,7 @@ const CharacterComicsSection = () => {
 
   return (
     <Section _px={theme.margin.X4}>
+      <Text variant="h2" text="Comics" />
       <div
         style={{
           display: "flex",

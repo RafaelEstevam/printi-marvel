@@ -6,6 +6,7 @@ interface ButtonProps extends ButtonWrapperProps {
   type: "button" | "submit" | "reset";
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
 }
 
 const Button = ({ label, ...props }: ButtonProps) => {

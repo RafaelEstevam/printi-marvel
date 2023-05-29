@@ -15,7 +15,7 @@ export interface StyledDivProps {
   _maxHeight?: string;
   _minwidth?: string;
   _background?: string;
-  _justifyContent?: string;
+  _justifycontent?: string;
 }
 
 export const Div = styled(`div`)<StyledDivProps>`
@@ -33,5 +33,5 @@ export const Div = styled(`div`)<StyledDivProps>`
   min-width: ${({ _minwidth }: StyledDivProps) => _minwidth};
   min-height: ${({ _minheight }: StyledDivProps) => _minheight};
   background: ${({ _background }: StyledDivProps) => _background};
-  justify-content: ${({ _justifyContent }: StyledDivProps) => _justifyContent};
+  justify-content: ${({ _justifycontent }: StyledDivProps) => _justifycontent};
 `;

@@ -10,6 +10,7 @@ interface InputProps {
   set: (state?: any) => any;
   required?: boolean;
   type?: string;
+  max?: number;
 }
 
 const Input = ({ set, name, state, value, ...props }: InputProps) => {

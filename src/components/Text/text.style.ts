@@ -48,7 +48,8 @@ export const TextWrapper = styled("div")<{ _direction?: string }>`
     font-size: ${({ theme }: any) => theme.fontSizes.small};
   }
 
-  span {
+  small {
+    font-size: ${({ theme }: any) => theme.fontSizes.smallest};
   }
 
   @media (max-width: ${({ theme }: any) => theme.screens.sm}) {

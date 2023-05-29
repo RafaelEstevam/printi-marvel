@@ -1,6 +1,7 @@
-import Button from "../Button/button.component";
-import { generatePagination } from "./functions/pagination.function";
-import { PaginationWrapper } from "./pagination.style";
+import ButtonPagination from "./components/buttonPagination.component";
+import PaginationNumbers from "./components/paginationNumbers.component";
+import SearchPagePagination from "./components/searchButton.component";
+import { PaginationContainer, PaginationWrapper } from "./pagination.style";
 
 export interface PaginationProps {
   count: number;
@@ -11,75 +12,33 @@ export interface PaginationProps {
   handleLoading?: (props?: any) => any;
 }
 
-interface ButtonPaginationProps {
-  currentPage: number;
-  page: number;
-  pagination: PaginationProps;
-  onClick?: (props?: any) => any;
-}
-
-const ButtonPagination = ({
-  page,
-  currentPage,
-  onClick,
-  pagination,
-}: ButtonPaginationProps) => {
-  return (
-    <Button
-      className={page === currentPage && "active"}
-      key={page}
-      onClick={onClick}
-      label={page}
-    />
-  );
-};
-
-const PaginationNumbers = ({ currentPage, ...pagination }: PaginationProps) => {
-  const limit = pagination?.limit;
-  const total = pagination?.total;
-
-  const pageList = generatePagination(currentPage, total, limit, 4);
-
-  return pageList.length > 1 ? (
-    <>
-      {pageList?.map(
-        (page: number) =>
-          page !== 0 && (
-            <ButtonPagination
-              currentPage={currentPage}
-              key={page}
-              page={page}
-              pagination={pagination}
-              onClick={() => pagination.handleLoading(page * pagination.limit)}
-            />
-          )
-      )}
-    </>
-  ) : (
-    <></>
-  );
-};
-
 const Pagination = ({ ...pagination }: PaginationProps) => {
   const max = Math.floor(pagination.total / pagination.limit);
   const currentPage = pagination?.offset / pagination?.limit;
 
   return pagination.total && pagination.total > pagination.limit ? (
-    <PaginationWrapper>
-      <ButtonPagination
-        currentPage={currentPage}
-        onClick={() => pagination.handleLoading(0)}
-        page={0}
-        pagination={pagination}
-      />
-      <PaginationNumbers currentPage={currentPage} {...pagination} />
-      <ButtonPagination
-        currentPage={currentPage}
-        onClick={() => pagination.handleLoading(max * pagination.limit)}
-        page={max}
-        pagination={pagination}
-      />
-    </PaginationWrapper>
+    <PaginationContainer
+      _display="flex"
+      _justifycontent="space-between"
+      _width={"100%"}
+    >
+      <PaginationWrapper>
+        <ButtonPagination
+          currentPage={currentPage}
+          onClick={() => pagination.handleLoading(0)}
+          page={0}
+          pagination={pagination}
+        />
+        <PaginationNumbers currentPage={currentPage} {...pagination} />
+        <ButtonPagination
+          currentPage={currentPage}
+          onClick={() => pagination.handleLoading(max * pagination.limit)}
+          page={max}
+          pagination={pagination}
+        />
+      </PaginationWrapper>
+      <SearchPagePagination max={max} handleSearch={pagination.handleLoading} />
+    </PaginationContainer>
   ) : (
     <></>
   );

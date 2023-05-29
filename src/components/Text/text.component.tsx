@@ -15,6 +15,8 @@ const SwitchText = ({ text, variant }: TextProps) => {
       return <h2>{text}</h2>;
     case "h3":
       return <h3>{text}</h3>;
+    case "small":
+      return <small>{text}</small>;
     default:
       return <p>{text}</p>;
   }
