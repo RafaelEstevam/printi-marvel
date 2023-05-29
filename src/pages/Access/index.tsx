@@ -44,6 +44,8 @@ const Access = () => {
                 src={logo1}
                 alt="Logo Marvel Comics"
                 title="Logo Marvel Comics"
+                width="250px"
+                height="101px"
               />
               <Text text="Login" variant="h2" />
             </Div>
