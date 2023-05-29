@@ -24,8 +24,6 @@ const ButtonPagination = ({
   onClick,
   pagination,
 }: ButtonPaginationProps) => {
-  console.log(page, currentPage);
-
   return (
     <Button
       className={page === currentPage && "active"}

@@ -19,6 +19,7 @@ const CharacterComicsSection = () => {
           gap: theme.margin.X4,
         }}
       >
+        {characterComics === null && <Text text={"Loading..."} />}
         {characterComics?.length === 0 && <Text text={"Nothing to show."} />}
         {characterComics?.map((comics: ComicsProps) => (
           <ComicDetail
