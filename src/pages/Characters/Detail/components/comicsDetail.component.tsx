@@ -36,8 +36,8 @@ const ComicDetail = ({
         <Div
           {...{
             _overflow: "hidden",
-            _maxWidth: "100px",
-            _minHeight: "auto",
+            _maxwidth: "100px",
+            _minheight: "auto",
             _background: "#fff",
           }}
         >
@@ -45,10 +45,10 @@ const ComicDetail = ({
             src={img}
             title={title}
             alt={title}
-            _borderRadius={theme.margin.X4}
+            _borderradius={theme.margin.X4}
           />
         </Div>
-        <Div {...divStyle} _flexDirection="column">
+        <Div {...divStyle} _flexdirection="column">
           <ComicsTitleWrapper>
             <ComicsTitle>
               <Text text="Title: " variant="p" />
@@ -63,9 +63,9 @@ const ComicDetail = ({
             <Div
               {...{
                 _padding: theme.margin.X4,
-                _alignItems: "center",
+                _alignitems: "center",
                 _background: theme.colors.light,
-                _borderRadius: theme.border.radiusX4,
+                _borderradius: theme.border.radiusX4,
               }}
             >
               <Text text={description} variant="p" />

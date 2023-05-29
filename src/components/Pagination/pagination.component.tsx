@@ -19,13 +19,16 @@ const PaginationNumbers = ({ ...pagination }: PaginationProps) => {
 
   return pageList.length > 1 ? (
     <>
-      {pageList?.map((page: number) => (
-        <Button
-          key={page}
-          onClick={() => pagination.handleLoading(page * limit)}
-          label={page}
-        />
-      ))}
+      {pageList?.map(
+        (page: number) =>
+          page !== 0 && (
+            <Button
+              key={page}
+              onClick={() => pagination.handleLoading(page * limit)}
+              label={page}
+            />
+          )
+      )}
     </>
   ) : (
     <></>

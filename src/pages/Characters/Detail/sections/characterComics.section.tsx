@@ -1,5 +1,6 @@
 import Pagination from "../../../../components/Pagination/pagination.component";
 import Section from "../../../../components/Section/section.component";
+import Text from "../../../../components/Text/text.component";
 import { theme } from "../../../../styles/theme";
 import ComicDetail, { ComicsProps } from "../components/comicsDetail.component";
 import useCharacterComicsList from "../hooks/useCharacterComicsList.hook";
@@ -18,6 +19,7 @@ const CharacterComicsSection = () => {
           gap: theme.margin.X4,
         }}
       >
+        {characterComics?.length === 0 && <Text text={"Nothing to show."} />}
         {characterComics?.map((comics: ComicsProps) => (
           <ComicDetail
             key={comics.id}

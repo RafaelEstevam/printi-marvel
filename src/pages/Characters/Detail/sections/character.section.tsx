@@ -16,8 +16,8 @@ const CharacterSection = () => {
 
   const divStyle: StyledDivProps = {
     _display: "flex",
-    _flexDirection: "column",
-    _alignItems: "center",
+    _flexdirection: "column",
+    _alignitems: "center",
   };
 
   return (
@@ -26,10 +26,11 @@ const CharacterSection = () => {
         {character && (
           <Div
             {...{
-              _borderRadius: "100%",
+              _borderradius: "100%",
               _overflow: "hidden",
-              _maxWidth: "250px",
-              _minHeight: "auto",
+              _maxwidth: "250px",
+              _minwidth: "250px",
+              _minheight: "auto",
               _background: "#fff",
             }}
           >
@@ -51,8 +52,11 @@ const CharacterSection = () => {
               _padding: `0px ${theme.margin.X4}`,
             }}
           >
-            <Div {...{ _maxWidth: "80%" }}>
-              <Text text={character?.description} _direction="justify" />
+            <Div {...{ _maxwidth: "80%" }}>
+              <Text
+                text={character?.description || " - "}
+                _direction="justify"
+              />
             </Div>
             <Div>
               <Button

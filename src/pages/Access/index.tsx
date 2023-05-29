@@ -16,8 +16,8 @@ const Access = () => {
 
   const divStyle: StyledDivProps = {
     _display: "flex",
-    _flexDirection: "column",
-    _alignItems: "center",
+    _flexdirection: "column",
+    _alignitems: "center",
   };
 
   return (
