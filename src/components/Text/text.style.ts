@@ -1,5 +1,13 @@
 import { styled } from "styled-components";
 
+export const LinkText = styled("p")`
+  font-size: ${({ theme }: any) => theme.fontSizes.smallest};
+  a {
+    padding: ${({ theme }: any) => theme.margin.X1};
+    color: ${({ theme }: any) => theme.colors.primary};
+    font-size: ${({ theme }: any) => theme.fontSizes.smallest};
+  }
+`;
 export const TextWrapper = styled("div")<{ _direction?: string }>`
   text-align: ${({ _direction }: any) => _direction};
 
@@ -20,6 +28,9 @@ export const TextWrapper = styled("div")<{ _direction?: string }>`
 
   p {
     font-size: ${({ theme }: any) => theme.fontSizes.small};
+  }
+
+  span {
   }
 
   @media (max-width: ${({ theme }: any) => theme.screens.sm}) {

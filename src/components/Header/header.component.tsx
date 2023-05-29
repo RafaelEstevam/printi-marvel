@@ -1,6 +1,6 @@
 import Grid from "../Grid/grid.component";
 import { GridContent } from "../Grid/grid.style";
-import logo1 from "../../assets/imgs/logo_1.png";
+import logo1 from "../../assets/imgs/logo_3.png";
 import GridItem from "../Grid/grid.item.component";
 import { HeaderWrapper } from "./header.style";
 import Button from "../Button/button.component";

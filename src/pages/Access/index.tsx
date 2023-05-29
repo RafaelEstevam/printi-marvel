@@ -4,12 +4,13 @@ import GridItem from "../../components/Grid/grid.item.component";
 import Section from "../../components/Section/section.component";
 import Text from "../../components/Text/text.component";
 
-import logo1 from "../../assets/imgs/logo_1.png";
+import logo1 from "../../assets/imgs/logo_3.png";
 import useFormData from "./hooks/useFormData.hook";
 import Input from "../../components/Input/input.component";
 import Button from "../../components/Button/button.component";
 import { theme } from "../../styles/theme";
 import { Div, StyledDivProps } from "../../components/Layout/layout.style";
+import { LinkText } from "../../components/Text/text.style";
 
 const Access = () => {
   const { formData, setFormData, submitAccessForm } = useFormData();
@@ -75,6 +76,15 @@ const Access = () => {
                 <Button id="login-button" label="Login" type="submit" />
               </Div>
             </form>
+
+            <Div _padding={`${theme.margin.X4} 0px 0px`}>
+              <LinkText>
+                If you havent got a public and private token, create your
+                <a href="https://developer.marvel.com/" target={"_blank"}>
+                  Marvel Development Account.
+                </a>
+              </LinkText>
+            </Div>
           </Card>
         </GridItem>
       </Grid>

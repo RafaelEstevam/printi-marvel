@@ -14,6 +14,7 @@ export const theme: any = {
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
+    smallest: "0.8rem",
     small: "1rem",
     medium: "1.5rem",
     large: "2rem",
