@@ -56,20 +56,20 @@ const Access = () => {
                 <Input
                   set={setFormData}
                   state={formData}
-                  placeholder="Insert your private key"
-                  name="privateKey"
-                  id="privateKey"
-                  value={formData.privateKey}
+                  placeholder="Insert your public key"
+                  name="publicKey"
+                  id="publicKey"
+                  value={formData.publicKey}
                   required
                 />
 
                 <Input
                   set={setFormData}
                   state={formData}
-                  placeholder="Insert your public key"
-                  name="publicKey"
-                  id="publicKey"
-                  value={formData.publicKey}
+                  placeholder="Insert your private key"
+                  name="privateKey"
+                  id="privateKey"
+                  value={formData.privateKey}
                   required
                 />
 

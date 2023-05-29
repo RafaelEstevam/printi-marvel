@@ -1,7 +1,6 @@
 import axios from "axios";
 import { getAccess } from "../helpers/getAccess.helper";
 import { enqueueSnackbar, closeSnackbar } from "notistack";
-import { config } from "process";
 
 let snack: any;
 
@@ -41,7 +40,7 @@ API.interceptors.response.use(
   },
   (error) => {
     snack = enqueueSnackbar(
-      "Cannot loading information. Try to refresh your access data on login.",
+      "Unable to load the information. Try to update your access data at login.",
       {
         variant: "error",
         autoHideDuration: 5000,

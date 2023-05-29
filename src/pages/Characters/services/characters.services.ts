@@ -31,7 +31,8 @@ export const getCharacters = async (page?: number) => {
 
     return { charactersList, pagination };
   } catch {
-    console.log("erro");
+    const charactersList: CharacterTable[] = [];
+    return { charactersList };
   }
 };
 
@@ -40,7 +41,7 @@ export const getCharacterById = async (id: number) => {
     const response: any = await API.get(`/v1/public/characters/${id}`);
     return response.data.data;
   } catch {
-    console.log("erro");
+    return null;
   }
 };
 
@@ -65,6 +66,14 @@ export const getComicsByCharacterId = async (
 
     return { comicsList, pagination };
   } catch {
-    console.log("erro");
+    const comicsList: ComicsProps[] = [];
+    const pagination: PaginationProps = {
+      count: 0,
+      limit: 0,
+      offset: 0,
+      total: 0,
+    };
+
+    return { comicsList, pagination };
   }
 };
