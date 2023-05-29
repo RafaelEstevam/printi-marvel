@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -47,6 +48,9 @@ module.exports = {
         { from: "./public/favicon.ico", to: "./" },
         { from: "./public/robots.txt", to: "./" },
       ],
+    }),
+    new UglifyJsPlugin({
+      include: /\.min\.js$/
     })
   ]
 }
