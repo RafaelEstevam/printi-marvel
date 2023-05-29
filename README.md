@@ -8,6 +8,10 @@ This project was build on React, with own Webpack config, and other technologies
 
 This application does a integration with the <a href="https://developer.marvel.com/" target="_blank">Marvel Developer API</a> to get the characters, character's detail and your comics related.
 
+## Marvel API Tokens
+
+You need to create a public and private key to use the Marvel API. This tokens cam be create in <a href="https://developer.marvel.com/" target="_blank">Marvel Developer API</a>
+
 ## Architecture
 
 This project was published on <a href="https://www.netlify.com/" target="_blank" >Netlify Host</a>
