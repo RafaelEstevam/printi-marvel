@@ -6,6 +6,7 @@ import { HeaderWrapper } from "./header.style";
 import Button from "../Button/button.component";
 import useNavigationHook from "../../hooks/useNavigation.hook";
 import { theme } from "../../styles/theme";
+import { removePaginationOnStorage } from "../../helpers/paginationPersist.helper";
 
 const Header = () => {
   const { handleLogout } = useNavigationHook();
@@ -30,7 +31,11 @@ const Header = () => {
             className="logout"
             id="logout"
             label="Logout"
-            onClick={() => handleLogout()}
+            onClick={() => {
+              handleLogout();
+              removePaginationOnStorage("characterComicsListPageOffset");
+              removePaginationOnStorage("charactersListPageOffset");
+            }}
             _color={theme.colors.white}
           />
         </div>
