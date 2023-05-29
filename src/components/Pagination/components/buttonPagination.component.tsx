@@ -15,6 +15,7 @@ export const ButtonPagination = ({
 }: ButtonPaginationProps) => {
   return (
     <Button
+      id={`page-id-${page}`}
       className={page === currentPage && "active"}
       key={page}
       onClick={onClick}

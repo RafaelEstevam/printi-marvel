@@ -63,6 +63,7 @@ const CharacterSection = () => {
             </Div>
             <Div>
               <Button
+                id={`page-back`}
                 label="Back"
                 onClick={() => {
                   handleNavigateTo("/characters");
