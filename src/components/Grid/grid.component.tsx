@@ -11,7 +11,7 @@ const Grid = ({ children, ...props }: GridProps) => {
 export default Grid;
 
 Grid.defaultProps = {
-  _flex: false,
+  _flex: "inherit",
   _justifycontent: "flex-start",
   _gap: "0",
   _direction: "row",

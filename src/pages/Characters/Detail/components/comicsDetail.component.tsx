@@ -41,12 +41,14 @@ const ComicDetail = ({
             _background: "#fff",
           }}
         >
-          <Image
-            src={img}
-            title={title}
-            alt={title}
-            _borderradius={theme.margin.X4}
-          />
+          {title && (
+            <Image
+              src={img}
+              title={title}
+              alt={title}
+              _borderradius={theme.margin.X4}
+            />
+          )}
         </Div>
         <Div {...divStyle} _flexdirection="column">
           <ComicsTitleWrapper>

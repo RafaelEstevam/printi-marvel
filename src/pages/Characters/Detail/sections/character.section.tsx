@@ -34,12 +34,14 @@ const CharacterSection = () => {
               _background: "#fff",
             }}
           >
-            <Image
-              src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
-              title={character?.name}
-              alt={character?.name}
-              _height="250px"
-            />
+            {character?.name && (
+              <Image
+                src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}
+                title={character?.name}
+                alt={character?.name}
+                _height="250px"
+              />
+            )}
           </Div>
         )}
 

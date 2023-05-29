@@ -22,16 +22,16 @@ const Access = () => {
 
   return (
     <Section
-      _fullheight
+      _height="100vh"
       _justifycontent="center"
       _alignitems="center"
-      _flex
+      _flex="flex"
       _direction="column"
       _px={theme.margin.X4}
     >
       <Grid
         {...{
-          _flex: true,
+          _flex: "flex",
           _alignitems: "center",
           _direction: "column",
           _justifycontent: "center",

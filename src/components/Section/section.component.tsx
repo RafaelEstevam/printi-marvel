@@ -12,5 +12,5 @@ const Section = ({ children, ...props }: SectionProps) => {
 export default Section;
 
 Section.defaultProps = {
-  _flex: false,
+  _flex: "inherit",
 };

@@ -10,7 +10,8 @@ export const formatComicsListData = (list: any) => {
     comics.modified = comics.modified = moment(new Date(item.modified)).format(
       "DD/MM/YYYY HH:mm"
     );
-    comics.img = `${item?.thumbnail.path}.${item?.thumbnail.extension}`;
+
+    comics.img = item && `${item?.thumbnail.path}.${item?.thumbnail.extension}`;
     comicsList.push(comics);
   });
 

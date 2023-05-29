@@ -35,7 +35,7 @@ export const getCharacters = async (page?: number) => {
   }
 };
 
-export const getCharacterById = async (id: number = 1010354) => {
+export const getCharacterById = async (id: number) => {
   try {
     const response: any = await API.get(`/v1/public/characters/${id}`);
     return response.data.data;
@@ -45,7 +45,7 @@ export const getCharacterById = async (id: number = 1010354) => {
 };
 
 export const getComicsByCharacterId = async (
-  characterId: number = 1010354,
+  characterId: number,
   page?: number
 ) => {
   try {

@@ -23,8 +23,7 @@ export const GridWrapper = styled("div")<SectionWrapperProps>`
     _justifycontent};
   align-items: ${({ _alignitems }: SectionWrapperProps) => _alignitems};
   gap: ${({ _gap }: any) => _gap};
-  height: ${({ _fullheight }: SectionWrapperProps) =>
-    _fullheight ? "100vh" : "inherit"};
+  height: ${({ _height }: SectionWrapperProps) => _height};
 `;
 
 export const GridItemWrapper = styled("div")<GridItemWrapperProps>`
