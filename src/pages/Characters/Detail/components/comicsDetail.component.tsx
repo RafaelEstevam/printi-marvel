@@ -54,7 +54,7 @@ const ComicDetail = ({
           <ComicsTitleWrapper>
             <ComicsTitle>
               <Text text="Title: " variant="p" />
-              <Text text={title} variant="h3" />
+              <Text text={title} variant="h3" className="textprimary" />
             </ComicsTitle>
             <ComicsTitle>
               <Text text="Number: " variant="p" />
@@ -66,7 +66,7 @@ const ComicDetail = ({
               {...{
                 _padding: theme.margin.X4,
                 _alignitems: "center",
-                _background: theme.colors.light,
+                _background: theme.colors.lightGray,
                 _borderradius: theme.border.radiusX4,
               }}
             >

@@ -3,6 +3,7 @@ import { TextWrapper } from "./text.style";
 interface TextProps {
   text: string | number;
   variant?: string;
+  className?: string;
   _direction?: string;
 }
 
@@ -19,8 +20,12 @@ const SwitchText = ({ text, variant }: TextProps) => {
   }
 };
 
-const Text = ({ _direction, ...props }: TextProps) => {
-  return <TextWrapper {...{ _direction }}>{SwitchText(props)}</TextWrapper>;
+const Text = ({ _direction, className, ...props }: TextProps) => {
+  return (
+    <TextWrapper className={className} {...{ _direction }}>
+      {SwitchText(props)}
+    </TextWrapper>
+  );
 };
 
 export default Text;

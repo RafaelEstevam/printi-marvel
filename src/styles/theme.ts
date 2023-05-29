@@ -6,6 +6,7 @@ export const theme: any = {
     secondary: "#fc0",
     white: "#fff",
     dark: "#333",
+    textColor: "#444444",
     darkgray: "#00000020",
     gray: "#00000015",
     lightGray: "#00000010",

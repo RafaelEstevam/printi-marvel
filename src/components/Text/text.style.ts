@@ -11,6 +11,24 @@ export const LinkText = styled("p")`
 export const TextWrapper = styled("div")<{ _direction?: string }>`
   text-align: ${({ _direction }: any) => _direction};
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: ${({ theme }) => theme.colors.textColor};
+  }
+
+  &.textprimary {
+    color: ${({ theme }) => `${theme.colors.primary} !important`};
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: ${({ theme }) => `${theme.colors.primary} !important`};
+    }
+  }
+
   h1 {
     font-size: ${({ theme }: any) => theme.fontSizes.largest};
     padding: ${({ theme }: any) => theme.margin.X4};

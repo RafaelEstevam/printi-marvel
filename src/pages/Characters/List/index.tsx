@@ -11,7 +11,7 @@ import { theme } from "../../../styles/theme";
 import useCharactersList from "./hooks/useCharactersList.hook";
 
 const columns: ColumnsProps[] = [
-  { key: "id", label: "" },
+  { key: "id", label: "Id" },
   { key: "name", label: "Name" },
   { key: "description", label: "Description" },
   { key: "modified", label: "Last modification" },

@@ -17,6 +17,11 @@ export const ButtonWrapper = styled("button")<ButtonWrapperProps>`
   font-size: ${({ theme }: any) => theme.fontSizes.small};
   transition: all linear 0.1s;
 
+  &.active {
+    background: ${({ theme }: any) => theme.colors.primary};
+    color: ${({ theme }: any) => theme.colors.white};
+  }
+
   &:hover {
     box-shadow: 0px 6px 0px ${({ theme }: any) => theme.colors.primary}70;
   }

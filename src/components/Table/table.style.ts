@@ -32,7 +32,11 @@ export const Tbody = styled("tbody")`
 export const Th = styled("th")`
   padding: ${({ theme }: any) => theme.margin.X4};
   text-align: left;
-  // background: ${({ theme }: any) => theme.colors.gray};
+  p {
+    color: ${({ theme }: any) => theme.colors.textColor};
+    font-size: ${({ theme }: any) => theme.fontSizes.smallest};
+    font-weight: 400;
+  }
 `;
 
 export const Tr = styled("tr")`
