@@ -19,7 +19,7 @@ export const ButtonPagination = ({
       className={page === currentPage && "active"}
       key={page}
       onClick={onClick}
-      label={page}
+      label={page + 1}
     />
   );
 };

@@ -41,11 +41,11 @@ const SearchPagePagination = ({
         />
       </Div>
       {formData.searchNumber > max && (
-        <Text variant="small" text={`Max page ${max}`} />
+        <Text variant="small" text={`Max page ${max + 1}`} />
       )}
 
       {formData.searchNumber < min && (
-        <Text variant="small" text={`Min page ${min}`} />
+        <Text variant="small" text={`Min page ${min + 1}`} />
       )}
     </Div>
   );
