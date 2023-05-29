@@ -79,7 +79,7 @@ const Access = () => {
 
             <Div _padding={`${theme.margin.X4} 0px 0px`}>
               <LinkText>
-                If you haven't got a public and private token, create your
+                If you haven't got a public and private key, create your
                 <a href="https://developer.marvel.com/" target={"_blank"}>
                   Marvel Development Account.
                 </a>
